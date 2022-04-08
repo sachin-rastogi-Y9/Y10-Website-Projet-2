@@ -1,0 +1,223 @@
+
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <!--fonts-->
+        <title>Kanye: A Bipolar Genius</title>
+
+        <style>
+
+            .kanye
+            {
+                text-align: center;
+            }
+
+            h1
+            {
+                color: black;
+            }
+
+            #flexContainer
+            {
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items:flex-start;
+            }
+
+            .college, .late, .grad
+            {
+                display:flex;
+                flex-direction: row;
+                text-align: left;
+                padding-right: 25px;
+                margin-right: 25px;
+            }
+
+            .textBox
+            {
+                top: 0px;
+                left: 5px;
+                font-size: 30px;
+            }
+            
+            body
+            {
+                background-color:rgba(255, 255, 255, 0.5);
+                font-family: 'Open Sans', sans-serif;
+                font-size: larger;
+                color: white;
+                font-weight: bolder;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
+            .modal-btn, .modal-btn1, .modal-btn2
+            {
+                height: 220px;
+                width: 220px;
+            }
+
+            .modal-content2
+            {
+                background-color: rgb(255, 0, 242);
+                display:none;
+                position: relative; 
+                padding: 10px; 
+                width: 200px; 
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.9s;
+                animation-name: animatetop;
+                animation-duration: 0.9s
+            }
+
+            .modal-content1
+            {
+                background-color: rgba(94, 60, 2, 0.884);
+                display:none;
+                position: relative; 
+                padding: 10px; 
+                width: 200px; 
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.9s;
+                animation-name: animatetop;
+                animation-duration: 0.9s
+            }
+            .modal-content
+            {
+                display:none;
+                position: relative; 
+                background-color: rgb(255, 0, 0);
+                padding: 10px; 
+                width: 200px; 
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.9s;
+                animation-name: animatetop;
+                animation-duration: 0.9s
+            }
+            .close-btn, .close-btn1, .close-btn2
+            {
+                float: right; 
+                color: lightgray; 
+                font-size: 24px;  
+                font-weight: bold;
+            }
+            .close-btn:hover, .close-btn1:hover, .close-btn2:hover
+            {
+                color: darkgray;
+                cursor: crosshair;
+            }
+            
+            @-webkit-keyframes animatetop 
+            {
+                from {opacity:0} 
+                to {opacity:1}
+            }
+            @keyframes animatetop 
+            {
+                from {opacity:0}
+                to {opacity:1}
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1 class = "kanye">Kanye: <br>A Bipolar Genius</h1>
+        <div id = "flexContainer">
+            <div id = "college">
+                <div id = "modal-btn" style="position:relative">
+                    <img id = "box" src="college.jpeg" height="220px" width="220px">
+                    <span class = "textBox" style = "position: absolute;" >9.4/10</span>
+                </div>
+                <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <p>The title of this album is indicative of its core theme: breaking through commonly held beliefs in society. College is not the only avenue to success, drugs and violence are not the only topics for rap songs, consumerism is not always great. Kanye West has fantastic production and even better lyricism throughout the album. Songs like Family Business display the amazing depth and outstanding potential that Kanye is able to provide.</p>
+                </div>
+            </div>
+            <div id = "late">
+                <div id = "modal-btn1" style = "position: relative;">
+                    <img src = "late.jpeg" height="220px" width="220px">
+                    <span class = "textBox" style = "position: absolute;" >9.8/10</span>
+                </div>
+                <div class = "modal-content1">
+                <span class = "close-btn1">&times;</span>
+                <p>Though it might be his most underrated, Late Registration is an album that lets me understand what perfection in Kanye’s abilities looks like. Every beat is fantastic, meaningful and soulful. Kanye is at the highest in his career lyrically and conceptually. Every feature is perfect and the orcehstral production is out of this world. My god this is such a magnificent piece of music. I am stunned how there was not a single dud in the track listing.</p>
+                </div>
+            </div>
+            <div id = "grad">
+                <div id = "modal-btn2" style = "position: relative;">
+                    <img src = "grad.jpeg" height="220px" width="220px">
+                    <span class = "textBox" style = "position: absolute;" >9.6/10</span>
+                </div>
+                <div class = "modal-content2">
+                <span class = "close-btn2">&times;</span>
+                <p>Kanye's third studio album is a great hip hop album consisting of excellent pop elements and samples. These three albums make his earlier career one of the most consistent of all time. 'Graduation' has so many catchy choruses and entertaining rhymes and verses which makes it a "stadium classic". 'Graduation' is  very consistent and Kanye appears with a self-confidence knowing he has reached the point of his life where he can celebrate his status.</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            modalBtn = document.getElementById("modal-btn")
+
+            modal = document.querySelector(".modal-content")
+
+            closeBtn = document.querySelector(".close-btn")
+
+            closeBtn.setAttribute("onclick","hideWindow()");
+            function hideWindow()
+            {
+                modal.style.display = "none"
+            }
+
+            modalBtn.onclick = function()
+            {
+                modal.style.display = "block"
+            }
+
+            window.onclick = function(e)
+            {
+                if(e.target == modal)
+                    modal.style.display = "none"
+            }
+
+            modalBtn1 = document.getElementById("modal-btn1")
+            modal1 = document.querySelector(".modal-content1")
+            closeBtn1 = document.querySelector(".close-btn1")
+            closeBtn1.setAttribute("onclick","hideWindow1()");
+            function hideWindow1()
+            {
+                modal1.style.display = "none"
+            }
+            modalBtn1.onclick = function()
+            {
+                modal1.style.display = "block"
+            }
+            window.onclick = function(e)
+            {
+                if(e.target == modal)
+                    modal1.style.display = "none"
+            }
+
+            modalBtn2 = document.getElementById("modal-btn2")
+            modal2 = document.querySelector(".modal-content2")
+            closeBtn2 = document.querySelector(".close-btn2")
+            closeBtn2.setAttribute("onclick","hideWindow2()");
+            function hideWindow2()
+            {
+                modal2.style.display = "none"
+            }
+            modalBtn2.onclick = function()
+            {
+                modal2.style.display = "block"
+            }
+            window.onclick = function(e)
+            {
+                if(e.target == modal)
+                    modal2.style.display = "none"
+            }
+        </script>
+    </body>
+</html>

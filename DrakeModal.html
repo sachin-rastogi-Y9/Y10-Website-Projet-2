@@ -1,0 +1,224 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <!--fonts-->
+        <title>Drake: The Change</title>
+
+        <style>
+
+            .drake
+            {
+                text-align: center;
+            }
+
+            h1
+            {
+                color: black;
+            }
+
+            #flexContainer
+            {
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items:flex-start;
+            }
+
+            .takeCare, .takeCare1, .takeCare2
+            {
+                display:flex;
+                flex-direction: row;
+                text-align: left;
+                padding-right: 25px;
+                margin-right: 25px;
+            }
+
+            .textBox
+            {
+                top: 0px;
+                left: 5px;
+                font-size: 30px;
+            }
+            
+            body
+            {
+                background-color:rgba(255, 255, 255, 0.5);
+                font-family: 'Open Sans', sans-serif;
+                font-size: larger;
+                color: white;
+                font-weight: bolder;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
+            .modal-btn, .modal-btn1, .modal-btn2
+            {
+                height: 220px;
+                width: 220px;
+            }
+
+            .modal-content2
+            {
+                background-color: rgb(0, 0, 0);
+                display:none;
+                position: relative; 
+                padding: 10px; 
+                width: 200px; 
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.9s;
+                animation-name: animatetop;
+                animation-duration: 0.9s
+            }
+
+            .modal-content1
+            {
+                background-color: rgb(0, 140, 255);
+                display:none;
+                position: relative; 
+                padding: 10px; 
+                width: 200px; 
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.9s;
+                animation-name: animatetop;
+                animation-duration: 0.9s
+            }
+            .modal-content
+            {
+                display:none;
+                position: relative; 
+                background-color: rgb(255, 0, 0);
+                padding: 10px; 
+                width: 200px; 
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.9s;
+                animation-name: animatetop;
+                animation-duration: 0.9s
+            }
+            .close-btn, .close-btn1, .close-btn2
+            {
+                float: right; 
+                color: lightgray; 
+                font-size: 24px;  
+                font-weight: bold;
+            }
+            .close-btn:hover, .close-btn1:hover, .close-btn2:hover
+            {
+                color: darkgray;
+                cursor: crosshair;
+            }
+            
+            @-webkit-keyframes animatetop 
+            {
+                from {opacity:0} 
+                to {opacity:1}
+            }
+            @keyframes animatetop 
+            {
+                from {opacity:0}
+                to {opacity:1}
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1 class = "drake">Drake: <br>The Change</h1>
+        <div id = "flexContainer">
+            <div id = "takeCare">
+                <div id = "modal-btn" style="position:relative">
+                    <img id = "box" src="drake.jpeg" height="220px" width="220px">
+                    <span class = "textBox" style = "position: absolute;" >9.4/10</span>
+                </div>
+                <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <p>With his penchant for poetic over-sharing, Drake is an apt avatar for the era of reality television and 24-hour self-documentation. Backed by lush and moody beats, Take Care finds him putting his talents to use on his strongest set of songs so far, and warns other hip-hop artists of a shift in the game.</p>
+                </div>
+            </div>
+            <div id = "takeCare1">
+                <div id = "modal-btn1" style = "position: relative;">
+                    <img src = "nothing.png" height="220px" width="220px">
+                    <span class = "textBox" style = "position: absolute;" >9.6/10</span>
+                </div>
+                <div class = "modal-content1">
+                <span class = "close-btn1">&times;</span>
+                <p>In this 2013 solo album, arguably his best project, Drake has gone from an unlikely rapper to the biggest rapper out in four years, and he's the genre's best pop crossover star. Nothing Was The Same is a dimly lit affair, both morose and triumphant; as far as Drake albums go, this is the Drakiest.</p>
+                </div>
+            </div>
+            <div id = "takeCare2">
+                <div id = "modal-btn2" style = "position: relative;">
+                    <img src = "if.png" height="220px" width="220px">
+                    <span class = "textBox" style = "position: absolute;" >9.4/10</span>
+                </div>
+                <div class = "modal-content2">
+                <span class = "close-btn2">&times;</span>
+                <p>Music is the real joy for Drake, and IYRTITL is best enjoyed as an exercise in the casual excellence of the artist as rhymer and purveyor of hooks. The vocals are vampy flow experiments yet they exhibit the weightless exhilaration of a technician at work. IYRTITL is definitely Drake's most underrated project.</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        //Puts the modal button with its styling on the page//
+            modalBtn = document.getElementById("modal-btn")
+        //Returns the first Element within the document that matches the specified selector, or group of selectors, in this case, it's the modal button//
+            modal = document.querySelector(".modal-content")
+        //For the close button that appears on the content half of the modal button, this is what makes it appear on the screen
+            closeBtn = document.querySelector(".close-btn")
+        //On the click of the close button, the window still takes place on the screen, but it is no longer visible. This is the function that makes it possible
+            closeBtn.setAttribute("onclick","hideWindow()");
+            function hideWindow()
+            {
+                modal.style.display = "none"
+            }
+        //The function that puts the content on the screen when clicked on the button//
+            modalBtn.onclick = function()
+            {
+                modal.style.display = "block"
+            }
+        //The function that shows that if anything around the button div is clickes, the function wont papear//
+            window.onclick = function(e)
+            {
+                if(e.target == modal)
+                    modal.style.display = "none"
+            }
+
+//This is a duplicate for the 2nd modal//
+            modalBtn1 = document.getElementById("modal-btn1")
+            modal1 = document.querySelector(".modal-content1")
+            closeBtn1 = document.querySelector(".close-btn1")
+            closeBtn1.setAttribute("onclick","hideWindow1()");
+            function hideWindow1()
+            {
+                modal1.style.display = "none"
+            }
+            modalBtn1.onclick = function()
+            {
+                modal1.style.display = "block"
+            }
+            window.onclick = function(e)
+            {
+                if(e.target == modal)
+                    modal1.style.display = "none"
+            }
+
+//This is the second duplicate for the 3rd modal//
+            modalBtn2 = document.getElementById("modal-btn2")
+            modal2 = document.querySelector(".modal-content2")
+            closeBtn2 = document.querySelector(".close-btn2")
+            closeBtn2.setAttribute("onclick","hideWindow2()");
+            function hideWindow2()
+            {
+                modal2.style.display = "none"
+            }
+            modalBtn2.onclick = function()
+            {
+                modal2.style.display = "block"
+            }
+            window.onclick = function(e)
+            {
+                if(e.target == modal)
+                    modal2.style.display = "none"
+            }
+        </script>
+    </body>
+</html>
